@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よんスタ</title>
+<style>
+/* ===== 全体 ===== */
+body {
+  margin:0;
+  font-family:'Helvetica Neue', Arial, sans-serif;
+  background:#fff;
+  color:#333;
+  scroll-behavior: smooth;
+  line-height:1.6;
+}
+a {
+  text-decoration:none;
+  color:#ff6600;
+  transition:0.3s;
+}
+a:hover { color:#fff; }
+
+/* ===== ヘッダー ===== */
+header {
+  text-align:center;
+  padding:60px 20px;
+}
+header h1 {
+  margin:0;
+  font-size:2.6rem;
+  color:#ff6600;
+}
+header p {
+  margin-top:10px;
+  font-size:1rem;
+  color:#666;
+}
+
+/* ===== ナビ ===== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 50px;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border-radius: 0 0 20px 20px;
+}
+nav a {
+  font-weight:600;
+  padding: 10px 20px;
+  border-radius:15px;
+  background:#ffefdd;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition: all 0.3s ease;
+}
+nav a:hover {
+  background:#ffd699;
+  color:#fff;
+}
+
+/* ===== メイン ===== */
+main {
+  max-width:1000px;
+  margin:40px auto;
+  padding:0 30px;
+}
+section { margin-bottom:70px; }
+h2 {
+  color:#ff6600;
+  border-bottom:3px solid #ffcc00;
+  padding-bottom:5px;
+  margin-bottom:20px;
+  font-size:1.8rem;
+}
+
+/* ===== チームカード ===== */
+.team {
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content:center;
+}
+.member {
+  background:#fff8e1;
+  border-radius:25px;
+  padding:20px;
+  width:220px;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 1s forwards;
+}
+.member:nth-child(1){animation-delay:0.2s;}
+.member:nth-child(2){animation-delay:0.4s;}
+.member:nth-child(3){animation-delay:0.6s;}
+.member:nth-child(4){animation-delay:0.8s;}
+.member img {
+  width:120px;
+  height:auto;
+  border-radius:50%;
+  margin-bottom:15px;
+}
+@keyframes fadeUp {
+  0% { opacity:0; transform:translateY(20px); }
+  100% { opacity:1; transform:translateY(0); }
+}
+
+/* ===== SNS ===== */
+.sns {
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  gap:15px;
+}
+.sns a {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#fff2cc;
+  padding:12px 18px;
+  border-radius:20px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.05);
+  width:90%;
+  max-width:500px;
+  transition: transform 0.3s, background 0.3s;
+}
+.sns a img {
+  width:24px;
+  height:24px;
+  object-fit:contain;
+}
+.sns a:hover {
+  transform: translateY(-3px);
+  background:#ffd699;
+  color:#fff;
+}
+
+/* ===== フッター ===== */
+footer {
+  background:#f0f0f0;
+  text-align:center;
+  padding:25px 0;
+  margin-top:50px;
+  font-size:0.9rem;
+}
+
+/* ===== レスポンシブ（スマホ用） ===== */
+@media (max-width: 600px) {
+  .team { flex-direction: column; align-items:center; }
+  .member { width:90%; }
+  header h1 { font-size:2rem; }
+  header p { font-size:0.9rem; }
+  nav { flex-direction: column; gap:15px; padding:15px 20px; border-radius:0 0 15px 15px; }
+  .sns a { width:96%; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>よんスタ/YONSTACK</h1>
+  <p>よんスタの公式サイト</p>
+</header>
+
+<nav>
+  <a href="#about">チャンネル紹介</a>
+  <a href="#team">メンバー</a>
+  <a href="#contact">最後に</a>
+</nav>
+
+<main>
+  <section id="about">
+    <h2>チャンネル紹介</h2>
+    <p>よんスタはマイクラで建築や日常を投稿しています！撮影中に起きたアクシデントをショートに投稿しています！<br>
+       俺等は笑顔を作る！！<br>
+俺の撮影中のルールは全力で楽しむです！皆に笑顔を届けるなら俺等も楽しく撮影しないとね！</p>
+  </section>
+
+  <section id="team">
+    <h2>メンバー</h2>
+    <div class="team">
+      <div class="member">
+        <img src="putyuu.png" alt="プチュー">
+        <h3>プチュー（リーダー）</h3>
+        <p>外装建築が上手い＆行動力化けもん、ボケ担当、PVP実力2位</p>
+      </div>
+      <div class="member">
+        <img src="soda.png" alt="SO-DA">
+        <h3>SO-DA</h3>
+        <p>イラスト製作担当、ツッコミ＆のんびり作業厨、PVP実力4位</p>
+      </div>
+      <div class="member">
+        <img src="rspa.png" alt="Rスパ">
+        <h3>Rスパ</h3>
+        <p>内装建築が上手い、実力トップ、たまに口が悪くなる、PVP実力1位</p>
+      </div>
+      <div class="member">
+        <img src="marukun.png" alt="まるくん">
+        <h3>まるくん</h3>
+        <p>場の雰囲気作り、謎の安定感、PVP実力3位</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sns">
+    <h2>SNS</h2>
+    <div class="sns">
+      <a href="https://youtube.com/@putyuuputyuu-c6h" target="_blank" rel="noopener noreferrer">
+        <img src="youtube.png" alt="YouTube"> YouTube
+      </a>
+      <a href="https://www.tiktok.com/@putyuu_soda_r7" target="_blank" rel="noopener noreferrer">
+        <img src="tiktok.png" alt="TikTok"> TikTok
+      </a>
+      <a href="https://www.instagram.com/yn_stack" target="_blank" rel="noopener noreferrer">
+        <img src="instagram.png" alt="Instagram"> Instagram
+      </a>
+      <a href="https://x.com/PUTYUU_SODA_Rsp" target="_blank" rel="noopener noreferrer">
+        <img src="x.png" alt="X"> X(Twitter)
+      </a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>最後に</h2>
+    <p>よんスタは笑顔を作るチャンネルです！<br>
+これからも頑張っていくので応援よろしくお願いします！<br>
+作ってほしい物、やってほしい企画があれば気軽にコメントに書いてください！</p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 よんスタ/Putyuu
+</footer>
+
+<script>
+const navLinks = document.querySelectorAll('nav a');
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.getElementById(link.getAttribute('href').slice(1));
+    const offset = target.offsetTop - document.querySelector('nav').offsetHeight;
+    window.scrollTo({ top: offset, behavior:'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
